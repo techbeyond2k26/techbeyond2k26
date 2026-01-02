@@ -2094,4 +2094,47 @@ body {
   object-fit: cover !important;
   object-position: center center !important;
 }
+/* =========================================================
+   📱 MOBILE ONLY – EVENT DESCRIPTION LIKE REG PANEL
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Center the event box */
+  .event-mobile-box {
+    width: 92%;
+    max-width: 420px;
+    max-height: 85vh;
+
+    margin: 80px auto;   /* space from top */
+    padding: 26px 20px;
+
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255, 40, 40, 0.45);
+    border-radius: 10px;
+
+    box-shadow:
+      0 0 25px rgba(229, 9, 20, 0.6),
+      inset 0 0 20px rgba(0, 0, 0, 0.8);
+
+    overflow-y: auto;
+  }
+
+  /* Hide scrollbar */
+  .event-mobile-box::-webkit-scrollbar {
+    width: 0;
+  }
+
+  /* Reset section padding inside box */
+  .event-mobile-box section {
+    padding: 0 !important;
+  }
+
+  /* Center headings */
+  .event-mobile-box h1,
+  .event-mobile-box h2 {
+    text-align: center;
+  }
+}
 

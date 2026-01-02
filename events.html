@@ -30,6 +30,7 @@
 
 <main>
     <div id="world">
+  
 
 <!-- ========== TECHNICAL EVENTS ========== -->
 <section class="st-row">
@@ -165,8 +166,8 @@
     </div>
   </div>
 </section>
-
- </div>
+</div>
+ 
   </main>
 
 
@@ -174,6 +175,13 @@
 
 <div id="lightning-container"></div>
 <body class="events-page">
+<script>
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) {
+      location.reload();
+    }
+  });
+</script>
 
 
 </body>
