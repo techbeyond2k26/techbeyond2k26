@@ -34,7 +34,7 @@ body {
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   z-index: -10;
   overflow: hidden;
 }
@@ -114,7 +114,7 @@ nav a:hover::after {
 
 /* ================= HERO ================= */
 .hero {
-  height: 100vh;
+  height: 100svh;
   padding-top: 120px;
   padding-bottom: 80px;
   display: flex;
@@ -756,7 +756,7 @@ h1 {
 .lightning {
   top: 0;
   width: 4px;
-  height: 100vh;
+  height: 100svh;
   opacity: 0;
   z-index: 999;
 }
@@ -780,7 +780,7 @@ h1 {
 /* ================= REGISTER PAGE BACKGROUND ================= */
 
 .register-bg {
-  min-height: 100vh;
+  min-height: 100svh;
   background:url(registration-backgrd.jpeg) center center / cover no-repeat fixed;
   position: relative;
 }
@@ -798,7 +798,7 @@ register-bg {
 
 
 .register-section {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2059,5 +2059,39 @@ main {
       transform: scale(1);
     }
   }
+}
+/* =========================================================
+   🔥 FINAL RESTORE FIX – BRING BACK TRUE FULLSCREEN
+   ========================================================= */
+
+/* Remove body padding effect on fullscreen background */
+body {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Force background to ignore body width */
+.video-bg {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Force media to cover viewport, not container */
+.video-bg video,
+.video-bg img {
+  width: 100vw !important;
+  height: 100vh !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
 }
 
