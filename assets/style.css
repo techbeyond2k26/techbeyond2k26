@@ -1933,3 +1933,57 @@ nav {
   }
 
 }
+/* ================= NUCLEAR MOBILE SCROLL FIX ================= */
+
+/* Force browser scrolling back */
+html, body {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  position: static !important;
+  touch-action: pan-y pan-x !important;
+}
+
+/* Disable transform lock */
+body, main {
+  transform: none !important;
+  filter: none !important;
+}
+
+/* EVENTS PAGE – ENABLE SCROLL */
+.events-page {
+  height: auto !important;
+  min-height: 100vh !important;
+  overflow-y: auto !important;
+  position: static !important;
+}
+
+/* Event cards row */
+.events-page .st-row-wrapper {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x !important;
+}
+
+/* Horizontal track */
+.events-page .st-row-track {
+  display: flex !important;
+  width: max-content !important;
+}
+
+/* Cards must not block touch */
+.st-card {
+  pointer-events: auto !important;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+.events-page main.upside-down {
+  animation: none !important;
+}
