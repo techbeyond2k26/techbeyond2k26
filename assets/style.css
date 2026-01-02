@@ -2139,24 +2139,24 @@ body {
 }
 
 /* =========================================================
-   📱 FINAL MOBILE GLITCH – ZERO OVERLAP (GUARANTEED)
+   📱 FINAL REAL-PHONE SAFE GLITCH (PRODUCTION FIX)
    ========================================================= */
 @media (max-width: 768px) {
 
-  /* ❌ Kill duplicate glitch layers */
+  /* Remove layered glitch (real phone bug source) */
   .glitch::before,
   .glitch::after {
     display: none !important;
     content: none !important;
   }
 
-  /* ✅ Single-layer glitch effect */
+  /* Single-layer glitch that LOOKS the same */
   .glitch {
     position: relative;
     display: inline;
     white-space: normal;
 
-    animation: mobile-glitch-flicker 1.8s infinite;
+    animation: phone-glitch 1.6s infinite steps(2);
 
     text-shadow:
       1px 0 #ff003c,
@@ -2164,26 +2164,22 @@ body {
       0 0 6px rgba(255, 0, 60, 0.6);
   }
 
-  @keyframes mobile-glitch-flicker {
+  @keyframes phone-glitch {
     0% {
       opacity: 1;
       text-shadow: 1px 0 #ff003c, -1px 0 #00e5ff;
     }
-    20% {
+    25% {
       opacity: 0.85;
       text-shadow: 2px 0 #ff003c, -2px 0 #00e5ff;
     }
-    40% {
+    50% {
       opacity: 1;
       text-shadow: -1px 0 #ff003c, 1px 0 #00e5ff;
     }
-    60% {
+    75% {
       opacity: 0.9;
       text-shadow: 2px 0 #ff003c, -1px 0 #00e5ff;
-    }
-    80% {
-      opacity: 1;
-      text-shadow: 1px 0 #ff003c, -2px 0 #00e5ff;
     }
     100% {
       opacity: 1;
@@ -2191,7 +2187,7 @@ body {
     }
   }
 
-  /* Text safety */
+  /* Text safety for real devices */
   p,
   li,
   .event-cache,
