@@ -2182,3 +2182,44 @@ body {
     animation: none !important;
   }
 }
+/* =========================================================
+   📱 MOBILE SAFE GLITCH — BLUE GLOW (NO OVERLAP)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Allow glitch color but remove ghost layers */
+  .glitch {
+    animation: mobileGlow 2.8s ease-in-out infinite;
+    text-shadow:
+      0 0 6px rgba(0, 229, 255, 0.55),
+      0 0 14px rgba(0, 229, 255, 0.35);
+  }
+
+  /* Kill duplicate layers completely */
+  .glitch::before,
+  .glitch::after {
+    display: none !important;
+  }
+
+  /* Soft glow animation */
+  @keyframes mobileGlow {
+    0% {
+      opacity: 1;
+      text-shadow:
+        0 0 4px rgba(0, 229, 255, 0.3),
+        0 0 10px rgba(0, 229, 255, 0.2);
+    }
+    50% {
+      opacity: 0.9;
+      text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.6),
+        0 0 18px rgba(0, 229, 255, 0.4);
+    }
+    100% {
+      opacity: 1;
+      text-shadow:
+        0 0 4px rgba(0, 229, 255, 0.3),
+        0 0 10px rgba(0, 229, 255, 0.2);
+    }
+  }
+}
