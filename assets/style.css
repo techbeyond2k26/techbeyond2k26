@@ -2323,12 +2323,21 @@ body {
   height: 100vh !important;
 }
 
-/* Kill mobile transform glitches */
+/* ✅ MOBILE SAFE: do NOT kill transforms globally */
 @media (max-width: 768px) {
-  * {
-    transform: none !important;
+
+  /* Allow world flip */
+  #world.upside-down {
+    animation: flipWorldSafe 1.2s ease-in-out forwards !important;
+    transform-origin: center center;
+  }
+
+  /* Disable only problematic effects */
+  .safe-zoom {
+    animation: none !important;
   }
 }
+
 /* 🔒 LOCK TEXT RENDERING SAME ON ALL PHONES */
 html {
   -webkit-text-size-adjust: 100%;
@@ -2337,6 +2346,38 @@ html {
 body {
   font-kerning: normal;
   font-variant-ligatures: none;
+}
+/* ================= MOBILE-SAFE UPSIDE DOWN ================= */
+
+#world {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* DESKTOP */
+#world.upside-down {
+  animation: flipDesktop 1.4s ease-in-out forwards;
+}
+
+@keyframes flipDesktop {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(180deg); }
+}
+
+/* MOBILE SAFE */
+@media (max-width: 768px) {
+  #world.upside-down {
+    animation: flipMobile 1s ease-in-out forwards;
+  }
+
+  @keyframes flipMobile {
+    from {
+      transform: rotate(0deg) translateZ(0);
+    }
+    to {
+      transform: rotate(180deg) translateZ(0);
+    }
+  }
 }
 
 

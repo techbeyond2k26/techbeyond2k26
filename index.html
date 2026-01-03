@@ -60,14 +60,22 @@
     <!-- COUNTDOWN -->
     <div class="countdown reveal-countdown" id="countdown"></div>
 
-    <!-- BUTTON -->
     <button
   type="button"
   class="register-btn"
-  id="enterUpsideDown"
-  onclick="enterUpsideDown()">
+  ontouchstart="
+    document.documentElement.style.transition='transform 1.2s ease-in-out';
+    document.documentElement.style.transform='rotate(180deg)';
+    setTimeout(()=>location.href='events.html',1200);
+  "
+  onclick="
+    document.documentElement.style.transition='transform 1.2s ease-in-out';
+    document.documentElement.style.transform='rotate(180deg)';
+    setTimeout(()=>location.href='events.html',1200);
+  ">
   ENTER THE UPSIDE DOWN
 </button>
+
 
   </div>
 </section>
