@@ -90,13 +90,40 @@ a {
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
+  height: 60px;
+
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  z-index: 100;
+
+  padding: 0 24px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+
+  z-index: 10000;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 38px;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 nav a {
