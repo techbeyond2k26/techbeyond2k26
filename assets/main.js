@@ -410,4 +410,5 @@ function triggerUpsideDown() {
     world.classList.remove("upside-down");
   }, 1700);
 }
-
+}
+);
